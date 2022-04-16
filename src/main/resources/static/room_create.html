@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>레드마피아</title>
+    <style>
+        #room-title {
+            position: relative;
+            left: 5px;
+        }
+        #create-back {
+            background-color: darkgray;
+            font-size: 20px; padding: 10px 20px;
+            border-radius: 10px;
+            position: relative;
+            left: 740px;
+            top: 35px;
+        }
+        #create-box {
+        width: 300px; height: 240px;
+        border: 2px solid black;
+        position: relative;
+        left: 700px;
+        top: 100px;
+        }
+        #create-room {
+            position: relative;
+            left: 150px;
+            background-color: darkgray;
+            font-size: 20px; padding: 10px 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="create-box">
+        <!--방 제목 설정-->
+        <br>&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+        방 제목
+        <span id="room-title"><input type="text" maxlength="10" style="width: 280px;height: 30px; font-size: 30px;" value="재밌는 레드마피아"></span><br>
+        <!--방 비밀번호 설정-->
+        <br>&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+        비밀방 설정<span id="room-secret-on"><input type="radio" name="pw"></span>
+        해제<span id="room-secret-off"><input type="radio" name="pw" checked></span><br>
+        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+        <span id="room-password"><input type="text" maxlength="4" style="width: 180px;height: 30px; font-size: 30px;"></span><br><br>
+        <button id="create-room">방 생성</button>
+    </div>
+    <button id="create-back">이전</button><br>
+</body>
+</html>

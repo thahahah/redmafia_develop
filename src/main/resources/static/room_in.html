@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>레드마피아</title>
+    <style>
+        #game-back {
+            background-color: midnightblue;
+            color: white;
+            font-size: 25px; padding: 10px 20px;
+            border-radius: 10px;
+        }
+        #job-explanation {
+            position: relative;
+            bottom: 700px;
+            background-color: #00a2ff;
+            font-size: 30px; padding: 10px 20px;
+            border-radius: 10px;
+
+        }
+        #player-box {
+            width: 204px; height: 408px;
+            border: 2px solid black;
+            position: relative;
+            top: 240px;
+            left: 350px;
+            float: left;
+        }
+        #player {
+            width: 100px; height: 100px;
+            border: 1px solid black;
+            border-radius: 10px;
+            position: relative;
+            left: 1px;
+        }
+        #text-box {
+            width: 600px; height: 700px;
+            border: 2px solid black;
+            position: relative;
+            top: 90px;
+            left: 400px;
+            float: left
+        }
+        #text {
+            position: relative;
+            top: 660px;
+            left: 5px;
+        }
+        #memo-box {
+            position: relative;
+            left: 290px;
+            top: 100px;
+            resize: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="game-back">나가기</button><br>
+    <button id="job-explanation">직업 설명</button>
+    <div id="player-box">
+        <div id="player">플레이어</div>
+        <div id="player-name">닉네임</div>
+    </div>
+    <div id="text-box">
+        <span id="text"><input type="text" maxlength="20" style="width: 580px;height: 30px; font-size: 30px;"autofocus></span>
+    </div>
+    <textarea id="memo-box" cols="30" rows="20" style="font-size: 30px" placeholder="메모 용지"></textarea>
+</body>
+</html>
