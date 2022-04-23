@@ -3,19 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>레드마피아</title>
-    <style>
-        #nick_submit {
-            background-color: white;
-            font-size: 20px; padding: 10px 20px;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="total.css">
+    <script src="total.js"></script>
 </head>
 <body>
     <div id="nickname">
-        <span id="nick"><input type="text" maxlength="5" style="width: 160px;height: 30px; font-size: 30px;" autofocus name="닉네임"></span>
+        <input type="text" maxlength="5" style="width: 160px;height: 30px; font-size: 30px;" autofocus name="닉네임" id="nick"/>
         <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button id="nick_submit">시작</button>
+    </div>
+
+    <!--[room_list]-->
+    <div id="room_list">
+        <button id="back">나가기</button><br>
+        <div id="room-list">
+            <br>
+            <div id="room-number">
+                &nbsp;&nbsp;<span id="room">방</span><button id="room-join">입장</button><br>
+            </div>
+        </div>
+        <button id="create">방 만들기</button><br>
+    </div>
+
+    <!--[room_create]-->
+    <div id="room_create">
+        <div id="create-box">
+            <!--방 제목 설정-->
+            <br>&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+            방 제목
+            <span id="room-title"><input type="text" maxlength="10" style="width: 280px;height: 30px; font-size: 30px;" value="재밌는 레드마피아"></span><br>
+            <!--방 비밀번호 설정-->
+            <br>&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+            비밀방 설정<span id="room-secret-on"><input type="radio" name="pw"></span>
+            해제<span id="room-secret-off"><input type="radio" name="pw" checked></span><br>
+            &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+            <span id="room-password"><input type="text" maxlength="4" style="width: 180px;height: 30px; font-size: 30px;"></span><br><br>
+            <button id="create-room">방 생성</button>
+        </div>
+        <button id="create-back">이전</button><br>
+    </div>
+
+    <!--[room_in]-->
+    <div id="room_in">
+        <button id="game-back">나가기</button><br>
+        <button id="job-explanation">직업 설명</button>
+        <div id="player-box">
+            <div id="player">플레이어</div>
+            <div id="player-name">닉네임</div>
+        </div>
+        <div id="text-box">
+            <span id="text"><input type="text" maxlength="20" style="width: 580px;height: 30px; font-size: 30px;"autofocus></span>
+        </div>
+        <textarea id="memo-box" cols="30" rows="20" style="font-size: 30px" placeholder="메모 용지"></textarea>
     </div>
 </body>
 </html>
