@@ -31,6 +31,21 @@
             border-radius: 10px;
         }
     </style>
+    <script>
+    window.onload = function () {
+        /* 이전 클릭 */
+        document.getElementById("create-back").addEventListener('click', create_back_btn)
+
+        function create_back_btn() {
+            window.location.href = 'http://localhost:63342/demo/static/room_list.html' /* 방 생성 url 지정 */
+        }
+        /*뒤로가기 금지*/
+        history.pushState(null, null, 'http://localhost:63342/demo/static/index.html'); /* 뒤로가기할경우 로그인페이지*/
+        window.onpopstate = function (event) {
+            history.go(1)
+        };
+    }
+    </script>
 </head>
 <body>
     <div id="room_create">
@@ -38,7 +53,7 @@
         <!--방 제목 설정-->
         <br>&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
         방 제목
-        <span id="room-title"><input type="text" maxlength="10" style="width: 280px;height: 30px; font-size: 30px;" value="재밌는 레드마피아"></span><br>
+        <span id="room-title"><input type="text" maxlength="10" style="width: 280px;height: 30px; font-size: 30px;" value="즐거운 레드마피아"></span><br>
         <!--방 비밀번호 설정-->
         <br>&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
         비밀방 설정<span id="room-secret-on"><input type="radio" name="pw"></span>
