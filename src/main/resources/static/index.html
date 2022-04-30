@@ -11,19 +11,26 @@
         }
     </style>
     <script>
-        window.onload = function () {
-            /* 로그인 */
-            document.getElementById("nick_submit").addEventListener('click', nick_Login)
-            function nick_Login() {
-                window.location.href = 'http://localhost:63342/demo/static/room_list.html'; /* 방 목록 url 지정 */
-            }
 
-            /*뒤로가기 금지*/
-            history.pushState(null, null, 'http://localhost:63342/demo/static/index.html'); /* 뒤로가기할경우 로그인페이지*/
-            window.onpopstate = function (event) {
-                history.go(1)
-            };
-        }
+        fetch('http://localhost:8080/test')
+            .then((response) => response.json())
+            .then((data) => console.log(data));
+
+         window.onload = function () {
+             /* 로그인 */
+             document.getElementById("nick_submit").addEventListener('click', nick_Login)
+
+             function nick_Login() {
+                 window.location.href = 'http://localhost:63342/demo/static/room_list.html'; /* 방 목록 url 지정 */
+             }
+
+             /*뒤로가기 금지*/
+             history.pushState(null, null, 'http://localhost:63342/demo/static/index.html'); /* 뒤로가기할경우 로그인페이지*/
+             window.onpopstate = function (event) {
+                 history.go(1)
+             };
+         }
+
     </script>
 </head>
 <body >
