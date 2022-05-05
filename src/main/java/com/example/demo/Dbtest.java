@@ -13,7 +13,7 @@ import java.util.List;
 public class Dbtest {
 
     @GetMapping("test")
-    public ArrayList<String> tests(){
+    public ArrayList<String> test123132321321s(){
         ArrayList<String> result = addtest();
         return result;
     }
