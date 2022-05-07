@@ -61,25 +61,11 @@
             color: crimson;
         }
     </style>
-    <script>
-    window.onload = function () {
-        /* 나가기 클릭 */
-        document.getElementById("game-back").addEventListener('click', game_back_btn)
-
-        function game_back_btn() {
-            window.location.href = 'http://localhost:63342/demo/static/room_list.html' /* 방 생성 url 지정 */
-        }
-        /*뒤로가기 금지*/
-        history.pushState(null, null, 'http://localhost:63342/demo/static/index.html'); /* 뒤로가기할경우 로그인페이지*/
-        window.onpopstate = function (event) {
-            history.go(1)
-        };
-    }
-    </script>
+    <script src="index.js"></script>
 </head>
 <body>
     <div id="room_in">
-    <button id="game-back">나가기</button><br>
+    <button id="game-back" onclick="game_back_btn()">나가기</button><br>
     <div id="player-box">
         <div id="player">플레이어</div>
         <div id="player-name">닉네임</div>

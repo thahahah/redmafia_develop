@@ -10,33 +10,13 @@
             border-radius: 10px;
         }
     </style>
-    <script>
-
-        fetch('/test').then((response) => response.json())
-            .then((data) => console.log(data));
-
-         window.onload = function () {
-             /* 로그인 */
-             document.getElementById("nick_submit").addEventListener('click', nick_Login)
-
-             function nick_Login() {
-                 window.location.href = 'http://3.35.25.198:8080/room_list.html'; /* 방 목록 url 지정 */
-             }
-
-             /*뒤로가기 금지*/
-             history.pushState(null, null, 'http://localhost:63342/demo/static/index.html'); /* 뒤로가기할경우 로그인페이지*/
-             window.onpopstate = function (event) {
-                 history.go(1)
-             };
-         }
-
-    </script>
+    <script src="index.js"></script>
 </head>
 <body >
     <div id="nickname">
         <input type="text" maxlength="5" style="width: 160px;height: 30px; font-size: 30px;" autofocus name="닉네임" id="nick"/>
         <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button id="nick_submit">시작</button>
+        <button id="nick_submit" onclick="nick_Login()">시작</button>
     </div>
 
 </body>

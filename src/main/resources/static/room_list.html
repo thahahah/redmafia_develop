@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>레드마피아</title>
-    <script src="total.js"></script>
+    <script src="index.js"></script>
     <style>
         #back {
             background-color: midnightblue;
@@ -44,38 +44,18 @@
             border-radius: 5px;
         }
     </style>
-    <script>
-        window.onload = function () {
-            /* 방 목록 중 생성창 클릭 */
-            document.getElementById("create_btn").addEventListener('click', create_btn)
-            function create_btn() {
-                window.location.href = 'http://localhost:63342/demo/static/room_create.html' /* 방 생성 url 지정 */
-            }
-
-            /* 방 목록 중 나가기 클릭 */
-            document.getElementById("back").addEventListener('click', back_btn)
-            function back_btn() {
-                window.location.href = 'http://localhost:63342/demo/static/index.html' /* 방 생성 url 지정 */
-            }
-
-            /*뒤로가기 금지*/
-            history.pushState(null, null, 'http://localhost:63342/demo/static/index.html'); /* 뒤로가기할경우 로그인페이지*/
-            window.onpopstate = function (event) {
-                history.go(1)
-            };
-        }
-    </script>
+    <script src="index.js"></script>
 </head>
 <body>
     <div id="room_list">
-    <button id="back">나가기</button><br>
+    <button id="back" onclick="back_btn()">나가기</button><br>
     <div id="room-list">
         <br>
         <div id="room-number">
             &nbsp;&nbsp;<span id="room">방</span><button id="room-join">입장</button><br>
         </div>
     </div>
-    <button id="create_btn">방 만들기</button><br>
+    <button id="create_btn" onclick="create_btn()">방 만들기</button><br>
     </div>
 </body>
 </html>

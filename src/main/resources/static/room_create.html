@@ -31,21 +31,7 @@
             border-radius: 10px;
         }
     </style>
-    <script>
-    window.onload = function () {
-        /* 이전 클릭 */
-        document.getElementById("create-back").addEventListener('click', create_back_btn)
-
-        function create_back_btn() {
-            window.location.href = 'http://localhost:63342/demo/static/room_list.html' /* 방 생성 url 지정 */
-        }
-        /*뒤로가기 금지*/
-        history.pushState(null, null, 'http://localhost:63342/demo/static/index.html'); /* 뒤로가기할경우 로그인페이지*/
-        window.onpopstate = function (event) {
-            history.go(1)
-        };
-    }
-    </script>
+    <script src="index.js"></script>
 </head>
 <body>
     <div id="room_create">
@@ -62,7 +48,7 @@
         <span id="room-password"><input type="text" maxlength="4" style="width: 180px;height: 30px; font-size: 30px;"></span><br><br>
         <button id="create-room">방 생성</button>
     </div>
-    <button id="create-back">이전</button><br>
+    <button id="create-back" onclick="create_back_btn()">이전</button><br>
     </div>
 </body>
 </html>
