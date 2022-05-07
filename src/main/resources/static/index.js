@@ -1,5 +1,5 @@
     /*뒤로가기 금지*/
-    history.pushState(null, null, 'http://localhost:8080/index.html'); /* 뒤로가기할경우 로그인페이지*/
+    history.pushState(null, null, 'index.html'); /* 뒤로가기할경우 로그인페이지*/
     window.onpopstate = function (event) {
         history.go(1)
     };
@@ -29,5 +29,5 @@
     /* room_in js 페이지 */
     /* 게임 나가기 버튼 */
     function game_back_btn() {
-        window.location.href = 'room_list.html' /* 방 생성 url 지정 */
+        window.location.href = 'room_list.html'
     };
