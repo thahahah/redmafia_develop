@@ -45,7 +45,7 @@ public class controller {
 */
 
     // 닉네임 중복 검사 및 추가
-    @PostMapping("/index/create")
+    @PostMapping("/index")
     public String dbname(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException { //http 요청을 객체로 반환해 가져옴
         //HttpServletRequest는 값을 받아올 수 있다
         //HttpServletResponse는 HttpServletResponse객체에 contexttype, 응답코드, 응답메세지를 담아서 전송함

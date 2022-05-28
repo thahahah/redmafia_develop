@@ -45,12 +45,6 @@
         }
     </style>
 
-    <script>
-        function room_in_btn() {
-            window.location.href = '/index/red_mafia'
-        };
-    </script>
-
     <script src="index.js"></script>
 </head>
 <body>
@@ -62,9 +56,7 @@
     <div id="room-list">
         <br>
         <div id="room-number">
-            <form action="/index/red_mafia" method="post">
-                &nbsp;&nbsp;<span id="room">방</span><input type="submit" id="room-join" value="입장"></input><br>
-            </form>
+            &nbsp;&nbsp;<span id="room">방</span><button id="room-join" onclick="room_join_btn()">입장</button><br>
 
         </div>
     </div>

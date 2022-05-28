@@ -58,3 +58,7 @@
     function game_back_btn() {
         window.location.href = 'room_list.html'
     };
+
+    function room_join_btn() {
+        window.location.href = 'room_in.html'
+    };
