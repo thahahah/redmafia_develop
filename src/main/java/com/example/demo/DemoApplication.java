@@ -17,6 +17,6 @@ public class DemoApplication {
     //serverendpoint 감지할 때 사용
     public ServerEndpointExporter serverEndpointExporter(){
         return new ServerEndpointExporter();
-    }
+    };
 
 }
