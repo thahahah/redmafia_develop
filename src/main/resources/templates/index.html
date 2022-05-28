@@ -14,9 +14,11 @@
 </head>
 <body >
     <div id="nickname">
-        <input type="text" maxlength="5" style="width: 160px;height: 30px; font-size: 30px;" autofocus name="닉네임" id="nick"/>
-        <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <submit id="nick_submit" onclick="nick_Login()">시작</submit>
+        <form action="/index/create" method="post">
+            <input type="text" maxlength="5" style="width: 160px;height: 30px; font-size: 30px;" autofocus name="nick" id="nick"/>
+            <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" id="nick_submit" onclick="nick_Login()"></input>
+        </form>
     </div>
 
 </body>

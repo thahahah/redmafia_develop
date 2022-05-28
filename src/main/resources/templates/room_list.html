@@ -44,15 +44,28 @@
             border-radius: 5px;
         }
     </style>
+
+    <script>
+        function room_in_btn() {
+            window.location.href = '/index/red_mafia'
+        };
+    </script>
+
     <script src="index.js"></script>
 </head>
 <body>
     <div id="room_list">
-    <button id="back" onclick="back_btn()">나가기</button><br>
+        <form action="/index/delete" method="post">
+            <input type="submit" id="back" onclick="back_btn()" value="나가기"></input><br>
+        </form>
+
     <div id="room-list">
         <br>
         <div id="room-number">
-            &nbsp;&nbsp;<span id="room">방</span><button id="room-join">입장</button><br>
+            <form action="/index/red_mafia" method="post">
+                &nbsp;&nbsp;<span id="room">방</span><input type="submit" id="room-join" value="입장"></input><br>
+            </form>
+
         </div>
     </div>
     <button id="create_btn" onclick="create_btn()">방 만들기</button><br>

@@ -31,11 +31,14 @@
             position: absolute;
             top: 155px;
             left: 610px;
+            font-size: 18px;
+            font-family: 굴림;
         }
+
         #text {
             position: relative;
-            top: 660px;
-            left: 5px;
+            top: 750px;
+            left: 605px;
         }
         #report {
             position: absolute;
@@ -62,17 +65,28 @@
         }
     </style>
     <script src="index.js"></script>
+
 </head>
 <body>
+
     <div id="room_in">
     <button id="game-back" onclick="game_back_btn()">나가기</button><br>
     <div id="player-box">
         <div id="player">플레이어</div>
         <div id="player-name">닉네임</div>
     </div>
-    <div id="text-box">
-        <span id="text"><input type="text" maxlength="20" style="width: 580px;height: 30px; font-size: 30px;"autofocus></span>
+
+    <!--<div id="text-box">-->
+        <div>
+            <!-- readonly는 읽기전용, y축으로 스크롤 -->
+        <textarea id="text-box" readonly style="overflow-y: scroll"></textarea>
+        <form>
+            <span id="text"><input type="text" id="Message" class="content" maxlength="20" style="width: 580px;height: 30px; font-size: 30px;"autofocus >
+            <input type="button" value="입력" onclick="sendMessage()"></input></span>
+        </form>
     </div>
+
+
         <div id="report"></div>
     </div>
 
@@ -199,5 +213,49 @@
             <p> 아무 능력이 없습니다.</p>
         </div>
     </div>
+
+
+    <script type="text/javascript">
+
+        let message; // 메세지 받을 변수
+        let textBox = document.getElementById("text-box"); // textarea
+        let messageGet = document.getElementById("Message"); // text
+
+        //const webSocket = new WebSocket("ws://localhost:8080/index/red_mafia");
+        const webSocket = new WebSocket("ws://3.35.25.198:8080/index/red_mafia");
+
+        webSocket.onopen = function () {
+            alert('입장');
+            //webSocket.send("입장함");
+        };
+
+        webSocket.onmessage = function (web) {
+            message = web.data; // 데이터 가져오기
+            textBox.append(message+"\n"); // textarea로 보내기
+            //textBox.value += message1.value+"\n";
+        };
+
+        webSocket.onclose = function (web) {
+            /* webSocket.close() 메서드는 웹소켓의 연결 또는 연결시도를 닫아버림 닫혀있으면 아무 작업안함*/
+            if(web.wasClean){
+                alert('종료');
+                //socket 닫음
+                webSocket.close();
+            }
+            else {
+                alert('네트워크 장애');
+            }
+        };
+        webSocket.onerror = function (web) {
+            alert(`error ${web.message}`);
+        };
+
+        function sendMessage() {
+            webSocket.send(messageGet.value); // input 값 서버로 보내기기
+           //message1.value = "";
+        };
+
+    </script>
+
 </body>
 </html>
