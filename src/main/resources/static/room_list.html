@@ -55,14 +55,15 @@
 </head>
 <body>
     <div id="room_list">
-        <form action="/index/delete" method="post">
-            <input type="submit" id="back" onclick="back_btn()" value="나가기"></input><br>
+        <form action="/delete" method="post">
+            <input type="button" id="back" value="나가기"></input><br>
+            <!--<input type="button" id="back" onclick="back_btn()" value="나가기"></input><br>-->
         </form>
 
     <div id="room-list">
         <br>
         <div id="room-number">
-            <form action="/index/red_mafia" method="post">
+            <form action="/red_mafia" method="post">
                 &nbsp;&nbsp;<span id="room">방</span><input type="submit" id="room-join" value="입장"></input><br>
             </form>
 

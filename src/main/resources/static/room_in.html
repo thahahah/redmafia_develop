@@ -66,6 +66,7 @@
     </style>
     <script src="index.js"></script>
 
+
 </head>
 <body>
 
@@ -81,13 +82,16 @@
             <!-- readonly는 읽기전용, y축으로 스크롤 -->
         <textarea id="text-box" readonly style="overflow-y: scroll"></textarea>
         <form>
-            <span id="text"><input type="text" id="Message" class="content" maxlength="20" style="width: 580px;height: 30px; font-size: 30px;"autofocus >
-            <input type="button" value="입력" onclick="sendMessage()"></input></span>
+            <span id="text">
+                <input type="text" id="Message" class="content" maxlength="20" style="width: 580px;height: 30px; font-size: 30px;"autofocus></input>
+                <input type="text" style="display: none;"/>
+                <input type="button" value="입력" onclick="sendMessage()">
+            </span>
         </form>
     </div>
 
-
         <div id="report"></div>
+
     </div>
 
     <!-- 직업 설명 버튼 -->
@@ -221,8 +225,15 @@
         let textBox = document.getElementById("text-box"); // textarea
         let messageGet = document.getElementById("Message"); // text
 
-        //const webSocket = new WebSocket("ws://localhost:8080/index/red_mafia");
-        const webSocket = new WebSocket("ws://3.35.25.198:8080/index/red_mafia");
+        //const webSocket = new WebSocket("ws://localhost:8080/red_mafia");
+        //const webSocket = new WebSocket("ws://182.227.182.70:8080/red_mafia");
+        const webSocket = new WebSocket("ws://3.35.25.198:8080/red_mafia");
+
+        const query = document.getElementById("Message");
+        query.addEventListener("keyup", (event) => {
+            if(event.keyCode == 13)
+                sendMessage();
+        });//엔터키
 
         webSocket.onopen = function () {
             alert('입장');

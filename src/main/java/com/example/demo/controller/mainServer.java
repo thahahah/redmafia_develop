@@ -12,7 +12,7 @@ import java.util.List;
 //내부에서 로직 처리할 때 사용 bean 등록할 때 사용
 @Service
 // 나중에 만들때 /index/{방이름} 이런식으로? 만들수있으면
-@ServerEndpoint(value = "/index/red_mafia")
+@ServerEndpoint(value = "/red_mafia")
 public class mainServer {
 
     //닉네임 가져옴
@@ -42,6 +42,7 @@ public class mainServer {
                     // 텍스트 메세지 전송
                     // getBasicRemote는 초반에 설정한 endpoint의 value값에 텍스트 메세지 전송
                     // get(i)는 리스트 i번째
+                    System.out.println(nickname + " : " + message);
                     value.getBasicRemote().sendText(nickname + " : " + message);
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -49,6 +50,7 @@ public class mainServer {
             } else {
                 try {
                     // 아닐경우
+                    System.out.println(nickname + message);
                     value.getBasicRemote().sendText(nickname + " : " + message);
                 } catch (IOException e) {
                     e.printStackTrace();
