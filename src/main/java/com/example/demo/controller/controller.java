@@ -22,7 +22,7 @@ public class controller {
 
     ResultSet resultSet; // db명령을 dbms에 전달하고 그 출력결과를 가져오는 인터페이스
 
-/*
+
     public static void main(String[] args){
         try{
             Connection connection = DriverManager.getConnection("jdbc:mysql://database-1.caxyf4kvshky.ap-northeast-2.rds.amazonaws.com:3306/capstone",
@@ -42,7 +42,7 @@ public class controller {
             e.printStackTrace();
         }
     }
-*/
+
 
     // 닉네임 중복 검사 및 추가
     @PostMapping("/create")

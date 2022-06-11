@@ -4,17 +4,36 @@
     <meta charset="UTF-8">
     <title>레드마피아</title>
     <style>
+
+        #nickname{
+            width: 190px; height: 180px;
+
+            position: absolute;
+            left: 50%; top: 50%;
+            margin-left: -250px;
+            margin-top: -125px;
+            border:2px solid black;
+        }
         #nick_submit {
             background-color: white;
             font-size: 20px; padding: 10px 20px;
             border-radius: 10px;
         }
+
+        h1 {
+            position: absolute;
+            left: 700px;
+            top: 280px;
+        }
     </style>
     <!--<script src="index.js"></script>-->
 </head>
 <body >
+    <h1>닉네임을 만드세요.</h1>
     <div id="nickname">
+        <br><br>
         <form action="/create" method="post">
+            &nbsp;
             <input type="text" maxlength="5" style="width: 160px;height: 30px; font-size: 30px;" autofocus name="nick" id="nick"/>
             <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="submit" id="nick_submit">
